@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flutter_class/card_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -70,7 +70,9 @@ class HomePage extends StatelessWidget {
              child: Text("Text Button"),
             ),
           ),
-          ElevatedButton(onPressed: (){},
+          ElevatedButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => CardPage()));
+          },
            style: ElevatedButton.styleFrom(
             backgroundColor: const Color.fromARGB(255, 1, 27, 27), foregroundColor: Colors.white, side: BorderSide(color: Colors.deepOrange), fixedSize: Size(150, 50), elevation: 5, shadowColor: Colors.amber
            ),
