@@ -46,6 +46,11 @@ class HomePage extends StatelessWidget {
           ListTile(leading: Icon(Icons.home),title: Text("HomePage"), onTap: (){},),
           Divider(),
 
+          ListTile(leading: Icon(Icons.card_giftcard),title: Text("Gift_Card"),hoverColor: Colors.blue, onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => CardPage()));
+          },),
+          Divider(),
+
           ListTile(leading: Icon(Icons.contact_page),title: Text("Contact"),hoverColor: Colors.blue, onTap: (){},),
           Divider(),
 
@@ -71,7 +76,8 @@ class HomePage extends StatelessWidget {
             ),
           ),
           ElevatedButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => CardPage()));
+            // Navigator.push(context, MaterialPageRoute(builder: (context) => CardPage()));
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Elevated Button Clicked"), backgroundColor: Colors.green, duration: Duration(seconds: 2), action: SnackBarAction(label: "Undo", onPressed: (){}, textColor: Colors.white,),));
           },
            style: ElevatedButton.styleFrom(
             backgroundColor: const Color.fromARGB(255, 1, 27, 27), foregroundColor: Colors.white, side: BorderSide(color: Colors.deepOrange), fixedSize: Size(150, 50), elevation: 5, shadowColor: Colors.amber
